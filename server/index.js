@@ -12,7 +12,9 @@ import userRoutes from './routes/user.js';
 
 const app = express();
 dotenv.config();
-
+app.get("/", (req, res) => {
+    res.json({ message: "Hello I am Backend" });
+  });
 /** Middlewares */
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
